@@ -20,12 +20,12 @@ class _DetailPageState extends State<DetailPage> {
       body: Column(
         children: [
           const SizedBox(
-            height: 30.0,
+            height: 10.0,
           ),
           _custumAppBar(),
           Container(
             width: MediaQuery.of(context).size.width,
-            height: 300,
+            height: 200,
             child: Stack(
               children: [
                 const Align(
@@ -55,11 +55,11 @@ class _DetailPageState extends State<DetailPage> {
               children: [
                 TextStyler(
                   widget.food.name,
-                  fonSize: 30.0,
+                  fonSize: 20.0,
                   fontWeight: FontWeight.bold,
                 ),
                 const SizedBox(
-                  height: 16.0,
+                  height: 5.0,
                 ),
                 Row(
                   children: [
@@ -76,7 +76,7 @@ class _DetailPageState extends State<DetailPage> {
                   ],
                 ),
                 const SizedBox(
-                  height: 16.0,
+                  height: 10.0,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -88,7 +88,7 @@ class _DetailPageState extends State<DetailPage> {
                   ],
                 ),
                 const SizedBox(
-                  height: 16.0,
+                  height: 10.0,
                 ),
                 TextStyler(
                   "Items",
@@ -111,7 +111,7 @@ class _DetailPageState extends State<DetailPage> {
                             backgroundColor:
                                 MaterialStateProperty.all(AppColors.greenColor),
                             padding: MaterialStateProperty.all(
-                              const EdgeInsets.symmetric(vertical: 25.0),
+                              const EdgeInsets.symmetric(vertical: 15.0),
                             ),
                             shape: MaterialStateProperty.all(
                                 const RoundedRectangleBorder(
@@ -119,7 +119,7 @@ class _DetailPageState extends State<DetailPage> {
                                         Radius.circular(18.0))))),
                         child: TextStyler(
                           "Add to Cart",
-                          fonSize: 18.0,
+                          fonSize: 15.0,
                         ),
                       ),
                     ),
@@ -139,12 +139,12 @@ class _DetailPageState extends State<DetailPage> {
       children: [
         TextStyler(
           title,
-          fonSize: 18.0,
+          fonSize: 15.0,
           fontWeight: FontWeight.bold,
         ),
         TextStyler(
           val,
-          fonSize: 16.0,
+          fonSize: 15.0,
           color: AppColors.redColor,
         )
       ],
@@ -180,7 +180,7 @@ class _DetailPageState extends State<DetailPage> {
           borderRadius: BorderRadius.all(Radius.circular(12.0))),
       child: Icon(
         btn,
-        size: 20.0,
+        size: 15.0,
       ),
     );
   }

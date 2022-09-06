@@ -29,7 +29,7 @@ class _HomePageState extends State<HomePage> {
       child: Stack(
         children: [
           Padding(
-            padding: const EdgeInsets.only(left: 60),
+            padding: const EdgeInsets.only(left: 50),
             child: _buildRightSection(),
           ),
 
@@ -68,7 +68,7 @@ class _HomePageState extends State<HomePage> {
 
           //La barre verticale (Le menu à l'interieur de la section de droite)
           Positioned(
-            bottom: 100.0,
+            bottom: 10,
             child: Transform.rotate(
               angle: -pi / 2,
               alignment: Alignment.topLeft,
@@ -189,7 +189,7 @@ class _HomePageState extends State<HomePage> {
                                       direction: Axis.horizontal,
                                       allowHalfRating: true,
                                       itemCount: 5,
-                                      itemSize: 16,
+                                      itemSize: 12,
                                       itemPadding: const EdgeInsets.symmetric(
                                           horizontal: 1.0),
                                       itemBuilder: (context, _) => const Icon(
@@ -280,8 +280,8 @@ class _HomePageState extends State<HomePage> {
         padding: const EdgeInsets.only(left: 40.0, bottom: 16.0, top: 20.0),
         itemBuilder: ((context, index) {
           return Container(
-            padding: const EdgeInsets.all(16.0),
-            margin: const EdgeInsets.all(12.0),
+            padding: const EdgeInsets.all(10.0),
+            margin: const EdgeInsets.all(5.0),
             decoration: BoxDecoration(
                 color: Colors.grey.withOpacity(.2),
                 borderRadius: const BorderRadius.only(
@@ -293,7 +293,7 @@ class _HomePageState extends State<HomePage> {
                   image: AssetImage(
                     foodList[index].imgPath,
                   ),
-                  width: 100,
+                  width: 70,
                 ),
                 const SizedBox(
                   width: 16.0,
