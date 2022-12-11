@@ -3,7 +3,11 @@
 # Flutter App: User Interface Challenge
 
 This project is a small challenge of making a user interface flutter application. It is an e-commerce application for selling food. Here are the images above that highlight the interface of the application.
-<p></p>
+<p align="center">
+    <img src="readme_image\food_1-removebg-preview.png" width="350"  alt="accessibility text">
+  <img src="readme_image\food_2-removebg-preview.png" width="350"  alt="accessibility text">
+
+</p>
 <h2>Getting Started</h2>
 <p>
 To get started with this project you need to have the following items:<br>
