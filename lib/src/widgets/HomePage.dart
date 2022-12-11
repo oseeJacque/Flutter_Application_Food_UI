@@ -53,7 +53,7 @@ class _HomePageState extends State<HomePage> {
                 ),
                 Container(
                   width: 40,
-                  height: 40,
+                  height: 30,
                   margin: const EdgeInsets.only(top: 15.0,bottom: 20.0),
                   decoration: const BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(12.0)),
@@ -156,7 +156,7 @@ class _HomePageState extends State<HomePage> {
             child: ListView(
           children: [
             Container(
-              height: 300,
+              height: MediaQuery.of(context).size.height*.45,
               child: PageView.builder(
                   physics: const ClampingScrollPhysics(),
                   itemCount: foodList.length,
@@ -167,8 +167,10 @@ class _HomePageState extends State<HomePage> {
                         Navigator.push(context, MaterialPageRoute(builder: (_)=> DetailPage(food: foodList[index])));
                       },
                       child: Padding(
-                        padding: const EdgeInsets.only(right: 40.0),
-                        child: Stack(children: [
+                        padding:EdgeInsets.only(right: MediaQuery.of(context).size.width*.02),
+                        child: Stack(
+                          clipBehavior: Clip.none,
+                          children: [
                           Container(
                             padding: const EdgeInsets.all(20.0),
                             margin: const EdgeInsets.only(
@@ -217,17 +219,20 @@ class _HomePageState extends State<HomePage> {
                               ],
                             ),
                           ),
-                          Align(
-                            alignment: Alignment.topRight,
-                            child: Transform.rotate(
-                              angle: pi / 6,
-                              child: Hero(
-                                tag: "image${foodList[index].imgPath}",
-                                 child: Image(
-                                image: AssetImage(foodList[index].imgPath),
-                                width: 200,
-                              ),)
-                              
+                          Positioned(
+                            right: -5,
+                            child: Align(
+                              alignment: Alignment.topRight,
+                              child: Transform.rotate(
+                                angle: pi / 6,
+                                child: Hero(
+                                  tag: "image${foodList[index].imgPath}",
+                                   child: Image(
+                                  image: AssetImage(foodList[index].imgPath),
+                                  width: 200,
+                                ),)
+                                
+                              ),
                             ),
                           ),
                           Positioned(
@@ -295,30 +300,30 @@ class _HomePageState extends State<HomePage> {
                   ),
                   width: 70,
                 ),
-                const SizedBox(
-                  width: 16.0,
+                SizedBox(
+                  width: MediaQuery.of(context).size.width*.02,
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     TextStyler(
                       foodList[index].name,
-                      fonSize: 20.0,
+                      fonSize: MediaQuery.of(context).size.width*.04,
                     ),
                     Row(
                       children: [
                         TextStyler(
                           "\$${foodList[index].price.toInt()}",
                           fontWeight: FontWeight.bold,
-                          fonSize: 20.0,
+                          fonSize: MediaQuery.of(context).size.width*.04,
                           color: AppColors.redColor,
                         ),
-                        const SizedBox(
-                          width: 16.0,
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width*.02,
                         ),
                         TextStyler(
                           "${foodList[index].weight.toInt()}gm weight",
-                          fonSize: 20.0,
+                          fonSize: MediaQuery.of(context).size.width*.04,
                         )
                       ],
                     )
@@ -336,6 +341,7 @@ class _HomePageState extends State<HomePage> {
       padding: const EdgeInsets.all(16.0),
       margin: EdgeInsets.only(left: 5.0, right: 5.0),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           RichText(
               text: TextSpan(
@@ -350,11 +356,11 @@ class _HomePageState extends State<HomePage> {
                         height: 1.5)),
               ])),
           const SizedBox(
-            width: 16.0,
+            width: 5.0,
           ),
           Expanded(
               child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            padding: const EdgeInsets.symmetric(horizontal: 6.0),
             decoration: BoxDecoration(
                 color: AppColors.greenLightColor,
                 borderRadius: const BorderRadius.all(
@@ -371,11 +377,9 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           )),
-          const SizedBox(
-            width: 16.0,
-          ),
+          
           Container(
-            padding: const EdgeInsets.all(12.0),
+            padding: const EdgeInsets.all(5.0),
             decoration: const BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.all(Radius.circular(12.0))),
